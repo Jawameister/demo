@@ -16,6 +16,8 @@ def index_page(request):
     categories = models.Category.objects.all()
     sales = models.Sale.objects.all()
     currency_rate = connect[0]['Rate']
+    connectw = requests.get(url='https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=508ccd2e282e4d9c770467d089767d48'
+).json()
     weather = "+32 C"
 
     return render(request, 'index.html', {'products':products,
